@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "21238a3f-f06d-4b6a-9a91-ad8e8243cbe3",
+		"name": "TaskAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/taskAPI/tasks/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"taskAPI",
+						"tasks",
+						""
+					]
+				},
+				"description": "Fetches all the tasks from the database"
+			},
+			"response": []
+		},
+		{
+			"name": "Get task from ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/taskAPI/tasks/{{task_id}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"taskAPI",
+						"tasks",
+						"{{task_id}}"
+					]
+				},
+				"description": "Fetches taskes based on provided ID."
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "task_type",
+							"value": "{{task_type}}",
+							"type": "text"
+						},
+						{
+							"key": "task_desc",
+							"value": "{{task_desc}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/taskAPI/tasks/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"taskAPI",
+						"tasks",
+						""
+					]
+				},
+				"description": "Creates a task with a automatically generated UUID."
+			},
+			"response": []
+		},
+		{
+			"name": "Update task details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "task_type",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "task_desc",
+							"value": "new data",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/taskAPI/tasks/{{task_id}}/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"taskAPI",
+						"tasks",
+						"{{task_id}}",
+						""
+					]
+				},
+				"description": "Update task details based on provided task id."
+			},
+			"response": []
+		},
+		{
+			"name": "Creating a task tracker with a task id.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "task_typeTracker",
+							"value": "{{task_id}}",
+							"type": "text"
+						},
+						{
+							"key": "update_type",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "blah@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/taskAPI/tasktracker/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"taskAPI",
+						"tasktracker",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updating a task tracker details.",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "task_typeTracker",
+							"value": "{{task_id}}",
+							"type": "text"
+						},
+						{
+							"key": "update_type",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ploh@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/taskAPI/tasktracker/{{task_id}}/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"taskAPI",
+						"tasktracker",
+						"{{task_id}}",
+						""
+					]
+				},
+				"description": "Updating task tracker using id."
+			},
+			"response": []
+		},
+		{
+			"name": "Get all task trackers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/taskAPI/tasktracker/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"taskAPI",
+						"tasktracker",
+						""
+					]
+				},
+				"description": "Get all task trackers."
+			},
+			"response": []
+		},
+		{
+			"name": "Get task tracker by task id.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/taskAPI/tasktracker/{{task_id}}/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"taskAPI",
+						"tasktracker",
+						"{{task_id}}",
+						""
+					]
+				},
+				"description": "Getting task tracker by task id."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
